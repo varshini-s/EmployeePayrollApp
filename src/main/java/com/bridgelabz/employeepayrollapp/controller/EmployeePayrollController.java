@@ -62,13 +62,13 @@ public class EmployeePayrollController
         return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
     }
 	
-    //curl -X PUT -H "Content-Type: application/json" -d '{"name": "Lisa","salary": 2000}' "http://localhost:8080/employeepayrollservice/update" -w "\n"
-    @PutMapping("/update")
-    public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@RequestBody EmployeePayrollDTO employeePayrollDTO)
+    //curl -X PUT -H "Content-Type: application/json" -d '{"name": "Lisa","salary": 4000}' "http://localhost:8080/employeepayrollservice/update/1" -w "\n"
+    @PutMapping("/update/{empId}")
+    public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@PathVariable("empId") int empId,@RequestBody EmployeePayrollDTO employeePayrollDTO)
     {
 
         EmployeePayrollData empData=null;
-        empData= employeePayrollService.updateEmployeePayrollData(employeePayrollDTO);
+        empData= employeePayrollService.updateEmployeePayrollData(empId,employeePayrollDTO);
         ResponseDTO respDTO = new ResponseDTO("Created payroll data successfully", empData);
         return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
     }
