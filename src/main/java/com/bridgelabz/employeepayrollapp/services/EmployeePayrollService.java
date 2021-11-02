@@ -22,9 +22,7 @@ public class EmployeePayrollService implements IEmployeePayrollService
 	@Override
 	public EmployeePayrollData getEmployeePayrollDataById(int empId) 
     {
-		EmployeePayrollData empData=null;
-        empData= new EmployeePayrollData(1,new EmployeePayrollDTO("Pankaj",30000));
-		return empData;
+		return employeePayrollList.get(empId-1);
 	}
 
 	@Override
