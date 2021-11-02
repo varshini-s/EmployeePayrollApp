@@ -30,7 +30,8 @@ public class EmployeePayrollService implements IEmployeePayrollService
     {
 		
         EmployeePayrollData empData=null;
-        empData= new EmployeePayrollData(1,employeePayrollDTO);
+        empData= new EmployeePayrollData(employeePayrollList.size()+1,employeePayrollDTO);
+        employeePayrollList.add(empData);
 		return empData;
 	}
 
