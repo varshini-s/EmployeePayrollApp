@@ -48,7 +48,7 @@ public class EmployeePayrollService implements IEmployeePayrollService
 	@Override
 	public void deleteEmployeePayrollData(int empId) 
     {
-		// TODO Auto-generated method stub
+		employeePayrollList.remove(empId-1);
 		
 	}
 
