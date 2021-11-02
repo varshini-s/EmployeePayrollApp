@@ -12,12 +12,11 @@ import com.bridgelabz.employeepayrollapp.model.EmployeePayrollData;
 public class EmployeePayrollService implements IEmployeePayrollService 
 {
 
+   private List<EmployeePayrollData> employeePayrollList= new ArrayList<>();
 	@Override
 	public List<EmployeePayrollData> getEmployeePayrollData() 
     {
-		List<EmployeePayrollData> empDataList= new ArrayList<>();
-        empDataList.add(new EmployeePayrollData(1,new EmployeePayrollDTO("Pankaj",3000)));
-        return empDataList;
+        return employeePayrollList;
 	}
 
 	@Override
