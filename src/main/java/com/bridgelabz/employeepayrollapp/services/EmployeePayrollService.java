@@ -36,10 +36,12 @@ public class EmployeePayrollService implements IEmployeePayrollService
 	}
 
 	@Override
-	public EmployeePayrollData updateEmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) 
+	public EmployeePayrollData updateEmployeePayrollData(int empId,EmployeePayrollDTO employeePayrollDTO) 
     {
-		EmployeePayrollData empData=null;
-        empData= new EmployeePayrollData(1,employeePayrollDTO);
+		EmployeePayrollData empData=this.getEmployeePayrollDataById(empId);
+        empData.setName(employeePayrollDTO.name);
+        empData.setSalary(employeePayrollDTO.salary);
+        employeePayrollList.set(empId-1,empData);
 		return empData;
 	}
 
