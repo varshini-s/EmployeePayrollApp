@@ -1,0 +1,8 @@
+ curl localhost:8080/employeepayrollservice/ -w "\n"
+ curl localhost:8080/employeepayrollservice/get/1 -w "\n"
+ curl -X POST -H "Content-Type: application/json" -d '{"name": "Lisa","salary": 2000}' "http://localhost:8080/employeepayrollservice/create" -w "\n”
+ curl -X POST -H "Content-Type: application/json" -d '{"name": "Ma","salary": 300}' "http://localhost:8080/employeepayrollservice/create" -w "\n"
+ curl -X POST -H "Content-Type: application/json" -d '{"name": "Mark","salary": 5000}' "http://localhost:8080/employeepayrollservice/create" -w "\n"
+ curl -X PUT -H "Content-Type: application/json" -d '{"name": "Lisa","salary": 300}' "http://localhost:8080/employeepayrollservice/update/1" -w "\n"
+ curl -X PUT -H "Content-Type: application/json" -d '{"name": "Lisa","salary": 3000}' "http://localhost:8080/employeepayrollservice/update/1" -w "\n"
+ curl -X DELETE -H "Content-Type: application/json" localhost:8080/employeepayrollservice/delete/1 -w "\n"
