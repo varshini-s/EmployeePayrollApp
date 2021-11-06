@@ -29,14 +29,14 @@ public class EmployeePayrollExceptionHandler
                              .map(objerr->objerr.getDefaultMessage())
                              .collect(Collectors.toList());
 
-        ResponseDTO responseDTO = new ResponseDTO("Exception while processing REST request", errMesg);
+        ResponseDTO responseDTO = new ResponseDTO(message, errMesg);
         return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(EmployeePayrollException.class)
     public ResponseEntity<ResponseDTO> handleEmployeePayrollException(EmployeePayrollException exception)
     {
-        ResponseDTO responseDTO = new ResponseDTO("Exception while processing REST request", exception.getMessage());
+        ResponseDTO responseDTO = new ResponseDTO(message, exception.getMessage());
         return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.BAD_REQUEST);
 
     }
