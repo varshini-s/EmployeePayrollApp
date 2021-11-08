@@ -51,6 +51,17 @@ public class EmployeePayrollController
         ResponseDTO respDTO = new ResponseDTO("Get call For ID Succesfull", empData);
         return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
     }
+
+    @GetMapping("/department/{department}")
+    public ResponseEntity<ResponseDTO> getEmployeePayrollData(@PathVariable("department") String department)
+    {
+
+        List<EmployeePayrollData> empDataList=null;
+        empDataList=employeePayrollService.getEmployeeByDepartment(department);
+        ResponseDTO respDTO = new ResponseDTO("Get call employee data by department Succesfull", empDataList);
+        return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
+
+    }
     
     //curl -X POST -H "Content-Type: application/json" -d '{"name": "Lisa","salary":2000}' "http://localhost:8080/employeepayrollservice/create" -w "\n"
 
